@@ -68,3 +68,4 @@ __pypackages__/
 .env.*
 
 crackme
+ghidra_context.json
