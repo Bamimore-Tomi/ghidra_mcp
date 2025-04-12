@@ -109,6 +109,9 @@ This enables hot reload and developer logs.
 
 ---
 
+## Sample Promot
+Analyze the binary file located at <BINARY_PATH> using Ghidra installed at <GHIDRA_PATH>. First, set up the analysis context using both paths, then list all functions in the binary. Examine the main entry point function and provide a high-level overview of what the program does.
+
 ## 🧠 Common Issues & Fixes
 
 ### ❌ Ghidra fails with “unsupported Java version”

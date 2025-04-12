@@ -2,7 +2,98 @@
   "functions": [
     {
       "comments": [], 
-      "signature": "undefined _create_user()", 
+      "signature": "undefined _average_score()", 
+      "local_variables": [
+        {
+          "storage": "Stack[-0x8]:8", 
+          "datatype": "undefined8", 
+          "name": "local_8"
+        }, 
+        {
+          "storage": "Stack[-0xc]:4", 
+          "datatype": "undefined4", 
+          "name": "local_c"
+        }, 
+        {
+          "storage": "Stack[-0x10]:4", 
+          "datatype": "undefined4", 
+          "name": "local_10"
+        }, 
+        {
+          "storage": "Stack[-0x18]:8", 
+          "datatype": "undefined8", 
+          "name": "local_18"
+        }
+      ], 
+      "global_variables": [], 
+      "entry": "0x100000460L", 
+      "strings": [], 
+      "pseudocode": "\nint _average_score(long param_1)\n\n{\n  undefined4 local_10;\n  undefined4 local_c;\n  \n  local_c = 0;\n  for (local_10 = 0; local_10 < 3; local_10 = local_10 + 1) {\n    local_c = local_c + *(int *)(param_1 + 0x18 + (long)local_10 * 4);\n  }\n  return local_c / 3;\n}\n\n", 
+      "name": "_average_score", 
+      "parameters": []
+    }, 
+    {
+      "comments": [], 
+      "signature": "undefined _greet_user()", 
+      "local_variables": [
+        {
+          "storage": "Stack[-0x10]:8", 
+          "datatype": "undefined8", 
+          "name": "local_10"
+        }, 
+        {
+          "storage": "Stack[-0x18]:8", 
+          "datatype": "undefined8", 
+          "name": "local_18"
+        }, 
+        {
+          "storage": "Stack[-0x48]:8", 
+          "datatype": "undefined8", 
+          "name": "local_48"
+        }, 
+        {
+          "storage": "Stack[-0x50]:8", 
+          "datatype": "undefined8", 
+          "name": "local_50"
+        }, 
+        {
+          "storage": "Stack[-0x58]:8", 
+          "datatype": "undefined8", 
+          "name": "local_58"
+        }, 
+        {
+          "storage": "Stack[-0x60]:8", 
+          "datatype": "undefined8", 
+          "name": "local_60"
+        }
+      ], 
+      "global_variables": [
+        {
+          "address": "100004008", 
+          "name": "PTR____stack_chk_guard_100004008"
+        }, 
+        {
+          "address": "10000c000", 
+          "name": "___stack_chk_guard"
+        }, 
+        {
+          "address": "100004008", 
+          "name": "PTR____stack_chk_guard_100004008"
+        }, 
+        {
+          "address": "10000c000", 
+          "name": "___stack_chk_guard"
+        }
+      ], 
+      "entry": "0x1000004ccL", 
+      "strings": [], 
+      "pseudocode": "\nvoid _greet_user(void *param_1)\n\n{\n  int iVar1;\n  undefined1 auStack_3c [36];\n  long local_18;\n  \n  local_18 = *(long *)PTR____stack_chk_guard_100004008;\n  _printf(\"Hello %s (age %d)!\\n\");\n  _memcpy(auStack_3c,param_1,0x24);\n  _average_score(auStack_3c);\n  iVar1 = _printf(\"Your average score is: %d\\n\");\n  if (*(long *)PTR____stack_chk_guard_100004008 - local_18 != 0) {\n                    /* WARNING: Subroutine does not return */\n    ___stack_chk_fail(*(long *)PTR____stack_chk_guard_100004008 - local_18,iVar1);\n  }\n  return;\n}\n\n", 
+      "name": "_greet_user", 
+      "parameters": []
+    }, 
+    {
+      "comments": [], 
+      "signature": "undefined entry()", 
       "local_variables": [
         {
           "storage": "Stack[-0x10]:8", 
@@ -25,259 +116,121 @@
           "name": "local_20"
         }, 
         {
-          "storage": "Stack[-0x28]:8", 
-          "datatype": "undefined8", 
-          "name": "local_28"
-        }
-      ], 
-      "global_variables": [
-        {
-          "address": "100004000", 
-          "name": "PTR____stderrp_100004000"
-        }, 
-        {
-          "address": "10000c000", 
-          "name": "___stderrp"
-        }
-      ], 
-      "entry": "0x100000460L", 
-      "strings": [], 
-      "pseudocode": "\nundefined8 * _create_user(char *param_1,undefined4 param_2,undefined4 param_3)\n\n{\n  undefined8 *puVar1;\n  char *pcVar2;\n  \n  puVar1 = (undefined8 *)_malloc(0x10);\n  if (puVar1 == (undefined8 *)0x0) {\n    _fprintf(*(FILE **)PTR____stderrp_100004000,\"Memory allocation failed\\n\");\n                    /* WARNING: Subroutine does not return */\n    _exit(1);\n  }\n  pcVar2 = _strdup(param_1);\n  *puVar1 = pcVar2;\n  *(undefined4 *)(puVar1 + 1) = param_2;\n  *(undefined4 *)((long)puVar1 + 0xc) = param_3;\n  return puVar1;\n}\n\n", 
-      "name": "_create_user", 
-      "parameters": []
-    }, 
-    {
-      "comments": [], 
-      "signature": "undefined _free_user()", 
-      "local_variables": [
-        {
-          "storage": "Stack[-0x10]:8", 
-          "datatype": "undefined8", 
-          "name": "local_10"
-        }, 
-        {
-          "storage": "Stack[-0x18]:8", 
-          "datatype": "undefined8", 
-          "name": "local_18"
-        }
-      ], 
-      "global_variables": [], 
-      "entry": "0x1000004e8L", 
-      "strings": [], 
-      "pseudocode": "\nvoid _free_user(undefined8 *param_1)\n\n{\n  if (param_1 != (undefined8 *)0x0) {\n    _free((void *)*param_1);\n    _free(param_1);\n  }\n  return;\n}\n\n", 
-      "name": "_free_user", 
-      "parameters": []
-    }, 
-    {
-      "comments": [], 
-      "signature": "undefined _get_greeting()", 
-      "local_variables": [
-        {
-          "storage": "Stack[-0x8]:8", 
-          "datatype": "undefined8", 
-          "name": "local_8"
-        }, 
-        {
-          "storage": "Stack[-0xc]:4", 
+          "storage": "Stack[-0x24]:4", 
           "datatype": "undefined4", 
-          "name": "local_c"
+          "name": "local_24"
         }, 
         {
-          "storage": "Stack[-0x10]:4", 
+          "storage": "Stack[-0x28]:4", 
           "datatype": "undefined4", 
-          "name": "local_10"
-        }
-      ], 
-      "global_variables": [], 
-      "entry": "0x100000528L", 
-      "strings": [], 
-      "pseudocode": "\nchar * _get_greeting(int param_1)\n\n{\n  char *local_8;\n  \n  if (param_1 == 0) {\n    local_8 = \"Hello\";\n  }\n  else if (param_1 == 1) {\n    local_8 = \"Hi\";\n  }\n  else if (param_1 == 2) {\n    local_8 = \"Hey\";\n  }\n  else {\n    local_8 = \"Greetings\";\n  }\n  return local_8;\n}\n\n", 
-      "name": "_get_greeting", 
-      "parameters": []
-    }, 
-    {
-      "comments": [], 
-      "signature": "undefined _greet_user()", 
-      "local_variables": [
-        {
-          "storage": "Stack[-0x10]:8", 
-          "datatype": "undefined8", 
-          "name": "local_10"
-        }, 
-        {
-          "storage": "Stack[-0x18]:8", 
-          "datatype": "undefined8", 
-          "name": "local_18"
-        }, 
-        {
-          "storage": "Stack[-0x20]:8", 
-          "datatype": "undefined8", 
-          "name": "local_20"
-        }, 
-        {
-          "storage": "Stack[-0x28]:8", 
-          "datatype": "undefined8", 
           "name": "local_28"
         }, 
         {
-          "storage": "Stack[-0x30]:8", 
-          "datatype": "undefined8", 
-          "name": "local_30"
-        }
-      ], 
-      "global_variables": [], 
-      "entry": "0x1000005acL", 
-      "strings": [], 
-      "pseudocode": "\nint _greet_user(long param_1)\n\n{\n  int iVar1;\n  \n  _get_greeting(*(undefined4 *)(param_1 + 0xc));\n  iVar1 = _printf(\"%s, %s! Your ID is %d.\\n\");\n  return iVar1;\n}\n\n", 
-      "name": "_greet_user", 
-      "parameters": []
-    }, 
-    {
-      "comments": [], 
-      "signature": "undefined entry()", 
-      "local_variables": [
-        {
-          "storage": "Stack[-0x10]:8", 
-          "datatype": "undefined8", 
-          "name": "local_10"
-        }, 
-        {
-          "storage": "Stack[-0x14]:4", 
+          "storage": "Stack[-0x40]:4", 
           "datatype": "undefined4", 
-          "name": "local_14"
-        }, 
-        {
-          "storage": "Stack[-0x18]:4", 
-          "datatype": "undefined4", 
-          "name": "local_18"
-        }, 
-        {
-          "storage": "Stack[-0x20]:8", 
-          "datatype": "undefined8", 
-          "name": "local_20"
-        }, 
-        {
-          "storage": "Stack[-0x28]:8", 
-          "datatype": "undefined8", 
-          "name": "local_28"
-        }, 
-        {
-          "storage": "Stack[-0x30]:8", 
-          "datatype": "undefined8", 
-          "name": "local_30"
-        }, 
-        {
-          "storage": "Stack[-0x40]:8", 
-          "datatype": "undefined8", 
           "name": "local_40"
+        }, 
+        {
+          "storage": "Stack[-0x44]:4", 
+          "datatype": "undefined4", 
+          "name": "local_44"
+        }, 
+        {
+          "storage": "Stack[-0x48]:4", 
+          "datatype": "undefined4", 
+          "name": "local_48"
+        }, 
+        {
+          "storage": "Stack[-0x50]:8", 
+          "datatype": "undefined8", 
+          "name": "local_50"
         }
       ], 
       "global_variables": [
         {
-          "address": "100004000", 
-          "name": "PTR____stderrp_100004000"
+          "address": "100004008", 
+          "name": "PTR____stack_chk_guard_100004008"
         }, 
         {
           "address": "10000c000", 
-          "name": "___stderrp"
+          "name": "___stack_chk_guard"
+        }, 
+        {
+          "address": "100004008", 
+          "name": "PTR____stack_chk_guard_100004008"
+        }, 
+        {
+          "address": "10000c000", 
+          "name": "___stack_chk_guard"
         }
       ], 
-      "entry": "0x100000600L", 
+      "entry": "0x100000570L", 
       "strings": [], 
-      "pseudocode": "\nbool entry(int param_1,long param_2)\n\n{\n  undefined8 uVar1;\n  \n  if (1 < param_1) {\n    uVar1 = _create_user(*(undefined8 *)(param_2 + 8),0x3e9,0);\n    _greet_user(uVar1);\n    _free_user(uVar1);\n  }\n  else {\n    _fprintf(*(FILE **)PTR____stderrp_100004000,\"Usage: %s <name>\\n\");\n  }\n  return 1 >= param_1;\n}\n\n", 
+      "pseudocode": "\n/* WARNING: Removing unreachable block (ram,0x0001000005f8) */\n/* WARNING: Removing unreachable block (ram,0x0001000005fc) */\n\nundefined8 entry(void)\n\n{\n  int iVar1;\n  undefined1 auStack_3c [20];\n  undefined4 local_28;\n  undefined4 local_24;\n  undefined4 local_20;\n  undefined4 local_1c;\n  long local_18;\n  \n  local_18 = *(long *)PTR____stack_chk_guard_100004008;\n  ___strcpy_chk(auStack_3c,\"Alice\",0x14);\n  local_28 = 0x1c;\n  local_24 = 0x55;\n  local_20 = 0x5a;\n  local_1c = 0x5f;\n  _greet_user(auStack_3c);\n  iVar1 = _printf(\"Option 2 selected.\\n\",0);\n  if (*(long *)PTR____stack_chk_guard_100004008 - local_18 == 0) {\n    return 0;\n  }\n                    /* WARNING: Subroutine does not return */\n  ___stack_chk_fail(*(long *)PTR____stack_chk_guard_100004008 - local_18,iVar1);\n}\n\n", 
       "name": "entry", 
       "parameters": []
     }, 
     {
       "comments": [], 
-      "signature": "void _exit(int param_1)", 
+      "signature": "undefined ___stack_chk_fail()", 
       "local_variables": [], 
       "global_variables": [
         {
-          "address": "100004008", 
-          "name": "PTR__exit_100004008"
+          "address": "100004000", 
+          "name": "PTR____stack_chk_fail_100004000"
         }
       ], 
-      "entry": "0x1000006acL", 
+      "entry": "0x10000065cL", 
       "strings": [], 
-      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nvoid _exit(int param_1)\n\n{\n                    /* WARNING: Could not recover jumptable at 0x0001000006b4. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  (*(code *)PTR__exit_100004008)(param_1);\n  return;\n}\n\n", 
-      "name": "_exit", 
-      "parameters": [
-        {
-          "storage": "w0:4", 
-          "datatype": "int", 
-          "name": "param_1"
-        }
-      ]
+      "pseudocode": "\nvoid ___stack_chk_fail(void)\n\n{\n                    /* WARNING: Could not recover jumptable at 0x000100000664. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  (*(code *)PTR____stack_chk_fail_100004000)();\n  return;\n}\n\n", 
+      "name": "___stack_chk_fail", 
+      "parameters": []
     }, 
     {
       "comments": [], 
-      "signature": "int _fprintf(FILE * param_1, char * param_2, ...)", 
+      "signature": "undefined ___strcpy_chk()", 
       "local_variables": [], 
       "global_variables": [
         {
           "address": "100004010", 
-          "name": "PTR__fprintf_100004010"
+          "name": "PTR____strcpy_chk_100004010"
         }
       ], 
-      "entry": "0x1000006b8L", 
+      "entry": "0x100000668L", 
       "strings": [], 
-      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nint _fprintf(FILE *param_1,char *param_2,...)\n\n{\n  int iVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x0001000006c0. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  iVar1 = (*(code *)PTR__fprintf_100004010)((int)param_1);\n  return iVar1;\n}\n\n", 
-      "name": "_fprintf", 
-      "parameters": [
-        {
-          "storage": "x0:8", 
-          "datatype": "FILE *", 
-          "name": "param_1"
-        }, 
-        {
-          "storage": "x1:8", 
-          "datatype": "char *", 
-          "name": "param_2"
-        }
-      ]
+      "pseudocode": "\nvoid ___strcpy_chk(void)\n\n{\n                    /* WARNING: Could not recover jumptable at 0x000100000670. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  (*(code *)PTR____strcpy_chk_100004010)();\n  return;\n}\n\n", 
+      "name": "___strcpy_chk", 
+      "parameters": []
     }, 
     {
       "comments": [], 
-      "signature": "void _free(void * param_1)", 
+      "signature": "void * _memcpy(void * param_1, void * param_2, size_t param_3)", 
       "local_variables": [], 
       "global_variables": [
         {
           "address": "100004018", 
-          "name": "PTR__free_100004018"
+          "name": "PTR__memcpy_100004018"
         }
       ], 
-      "entry": "0x1000006c4L", 
+      "entry": "0x100000674L", 
       "strings": [], 
-      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nvoid _free(void *param_1)\n\n{\n                    /* WARNING: Could not recover jumptable at 0x0001000006cc. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  (*(code *)PTR__free_100004018)();\n  return;\n}\n\n", 
-      "name": "_free", 
+      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nvoid * _memcpy(void *param_1,void *param_2,size_t param_3)\n\n{\n  void *pvVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x00010000067c. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  pvVar1 = (void *)(*(code *)PTR__memcpy_100004018)();\n  return pvVar1;\n}\n\n", 
+      "name": "_memcpy", 
       "parameters": [
         {
           "storage": "x0:8", 
           "datatype": "void *", 
           "name": "param_1"
-        }
-      ]
-    }, 
-    {
-      "comments": [], 
-      "signature": "void * _malloc(size_t param_1)", 
-      "local_variables": [], 
-      "global_variables": [
+        }, 
         {
-          "address": "100004020", 
-          "name": "PTR__malloc_100004020"
-        }
-      ], 
-      "entry": "0x1000006d0L", 
-      "strings": [], 
-      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nvoid * _malloc(size_t param_1)\n\n{\n  void *pvVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x0001000006d8. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  pvVar1 = (void *)(*(code *)PTR__malloc_100004020)();\n  return pvVar1;\n}\n\n", 
-      "name": "_malloc", 
-      "parameters": [
+          "storage": "x1:8", 
+          "datatype": "void *", 
+          "name": "param_2"
+        }, 
         {
-          "storage": "x0:8", 
+          "storage": "x2:8", 
           "datatype": "typedef size_t __darwin_size_t", 
-          "name": "param_1"
+          "name": "param_3"
         }
       ]
     }, 
@@ -287,36 +240,14 @@
       "local_variables": [], 
       "global_variables": [
         {
-          "address": "100004028", 
-          "name": "PTR__printf_100004028"
+          "address": "100004020", 
+          "name": "PTR__printf_100004020"
         }
       ], 
-      "entry": "0x1000006dcL", 
+      "entry": "0x100000680L", 
       "strings": [], 
-      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nint _printf(char *param_1,...)\n\n{\n  int iVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x0001000006e4. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  iVar1 = (*(code *)PTR__printf_100004028)((int)param_1);\n  return iVar1;\n}\n\n", 
+      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nint _printf(char *param_1,...)\n\n{\n  int iVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x000100000688. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  iVar1 = (*(code *)PTR__printf_100004020)((int)param_1);\n  return iVar1;\n}\n\n", 
       "name": "_printf", 
-      "parameters": [
-        {
-          "storage": "x0:8", 
-          "datatype": "char *", 
-          "name": "param_1"
-        }
-      ]
-    }, 
-    {
-      "comments": [], 
-      "signature": "char * _strdup(char * param_1)", 
-      "local_variables": [], 
-      "global_variables": [
-        {
-          "address": "100004030", 
-          "name": "PTR__strdup_100004030"
-        }
-      ], 
-      "entry": "0x1000006e8L", 
-      "strings": [], 
-      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nchar * _strdup(char *param_1)\n\n{\n  char *pcVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x0001000006f0. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  pcVar1 = (char *)(*(code *)PTR__strdup_100004030)();\n  return pcVar1;\n}\n\n", 
-      "name": "_strdup", 
       "parameters": [
         {
           "storage": "x0:8", 
@@ -326,136 +257,9 @@
       ]
     }
   ], 
-  "program": "crackme", 
+  "program": "calc", 
   "data_types": {
     "structures": [
-      {
-        "length": 16, 
-        "members": [
-          {
-            "offset": 0, 
-            "datatype": "uchar *", 
-            "name": "_base"
-          }, 
-          {
-            "offset": 8, 
-            "datatype": "int", 
-            "name": "_size"
-          }
-        ], 
-        "name": "__sbuf"
-      }, 
-      {
-        "length": 152, 
-        "members": [
-          {
-            "offset": 0, 
-            "datatype": "uchar *", 
-            "name": "_p"
-          }, 
-          {
-            "offset": 8, 
-            "datatype": "int", 
-            "name": "_r"
-          }, 
-          {
-            "offset": 12, 
-            "datatype": "int", 
-            "name": "_w"
-          }, 
-          {
-            "offset": 16, 
-            "datatype": "short", 
-            "name": "_flags"
-          }, 
-          {
-            "offset": 18, 
-            "datatype": "short", 
-            "name": "_file"
-          }, 
-          {
-            "offset": 24, 
-            "datatype": "/stdio.h/__sbuf\npack()\nStructure __sbuf {\n   0   uchar *   8   _base   \"\"\n   8   int   4   _size   \"\"\n}\nLength: 16 Alignment: 8\n", 
-            "name": "_bf"
-          }, 
-          {
-            "offset": 40, 
-            "datatype": "int", 
-            "name": "_lbfsize"
-          }, 
-          {
-            "offset": 48, 
-            "datatype": "void *", 
-            "name": "_cookie"
-          }, 
-          {
-            "offset": 56, 
-            "datatype": "_func_2 *", 
-            "name": "_close"
-          }, 
-          {
-            "offset": 64, 
-            "datatype": "_func_3 *", 
-            "name": "_read"
-          }, 
-          {
-            "offset": 72, 
-            "datatype": "_func_4 *", 
-            "name": "_seek"
-          }, 
-          {
-            "offset": 80, 
-            "datatype": "_func_5 *", 
-            "name": "_write"
-          }, 
-          {
-            "offset": 88, 
-            "datatype": "/stdio.h/__sbuf\npack()\nStructure __sbuf {\n   0   uchar *   8   _base   \"\"\n   8   int   4   _size   \"\"\n}\nLength: 16 Alignment: 8\n", 
-            "name": "_ub"
-          }, 
-          {
-            "offset": 104, 
-            "datatype": "__sFILEX *", 
-            "name": "_extra"
-          }, 
-          {
-            "offset": 112, 
-            "datatype": "int", 
-            "name": "_ur"
-          }, 
-          {
-            "offset": 116, 
-            "datatype": "uchar[3]", 
-            "name": "_ubuf"
-          }, 
-          {
-            "offset": 119, 
-            "datatype": "uchar[1]", 
-            "name": "_nbuf"
-          }, 
-          {
-            "offset": 120, 
-            "datatype": "/stdio.h/__sbuf\npack()\nStructure __sbuf {\n   0   uchar *   8   _base   \"\"\n   8   int   4   _size   \"\"\n}\nLength: 16 Alignment: 8\n", 
-            "name": "_lb"
-          }, 
-          {
-            "offset": 136, 
-            "datatype": "int", 
-            "name": "_blksize"
-          }, 
-          {
-            "offset": 144, 
-            "datatype": "typedef fpos_t __darwin_off_t", 
-            "name": "_offset"
-          }
-        ], 
-        "name": "__sFILE"
-      }, 
-      {
-        "length": 1, 
-        "members": [], 
-        "name": "__sFILEX"
-      }, 
       {
         "length": 8, 
         "members": [
@@ -1331,72 +1135,7 @@
         "name": "uuid_command"
       }
     ], 
-    "function_definitions": [
-      {
-        "return_type": "int", 
-        "name": "_func_2", 
-        "parameters": [
-          {
-            "datatype": "void *", 
-            "name": ""
-          }
-        ]
-      }, 
-      {
-        "return_type": "int", 
-        "name": "_func_3", 
-        "parameters": [
-          {
-            "datatype": "void *", 
-            "name": ""
-          }, 
-          {
-            "datatype": "char *", 
-            "name": ""
-          }, 
-          {
-            "datatype": "int", 
-            "name": ""
-          }
-        ]
-      }, 
-      {
-        "return_type": "typedef fpos_t __darwin_off_t", 
-        "name": "_func_4", 
-        "parameters": [
-          {
-            "datatype": "void *", 
-            "name": ""
-          }, 
-          {
-            "datatype": "typedef fpos_t __darwin_off_t", 
-            "name": ""
-          }, 
-          {
-            "datatype": "int", 
-            "name": ""
-          }
-        ]
-      }, 
-      {
-        "return_type": "int", 
-        "name": "_func_5", 
-        "parameters": [
-          {
-            "datatype": "void *", 
-            "name": ""
-          }, 
-          {
-            "datatype": "char *", 
-            "name": ""
-          }, 
-          {
-            "datatype": "int", 
-            "name": ""
-          }
-        ]
-      }
-    ], 
+    "function_definitions": [], 
     "enums": []
   }
 }
