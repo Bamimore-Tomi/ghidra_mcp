@@ -1,0 +1,1402 @@
+{
+  "functions": [
+    {
+      "comments": [], 
+      "signature": "undefined _create_user()", 
+      "local_variables": [
+        {
+          "storage": "Stack[-0x10]:8", 
+          "datatype": "undefined8", 
+          "name": "local_10"
+        }, 
+        {
+          "storage": "Stack[-0x18]:8", 
+          "datatype": "undefined8", 
+          "name": "local_18"
+        }, 
+        {
+          "storage": "Stack[-0x1c]:4", 
+          "datatype": "undefined4", 
+          "name": "local_1c"
+        }, 
+        {
+          "storage": "Stack[-0x20]:4", 
+          "datatype": "undefined4", 
+          "name": "local_20"
+        }, 
+        {
+          "storage": "Stack[-0x28]:8", 
+          "datatype": "undefined8", 
+          "name": "local_28"
+        }
+      ], 
+      "global_variables": [
+        {
+          "address": "100004000", 
+          "name": "PTR____stderrp_100004000"
+        }, 
+        {
+          "address": "10000c000", 
+          "name": "___stderrp"
+        }
+      ], 
+      "entry": "0x100000460L", 
+      "strings": [], 
+      "pseudocode": "\nundefined8 * _create_user(char *param_1,undefined4 param_2,undefined4 param_3)\n\n{\n  undefined8 *puVar1;\n  char *pcVar2;\n  \n  puVar1 = (undefined8 *)_malloc(0x10);\n  if (puVar1 == (undefined8 *)0x0) {\n    _fprintf(*(FILE **)PTR____stderrp_100004000,\"Memory allocation failed\\n\");\n                    /* WARNING: Subroutine does not return */\n    _exit(1);\n  }\n  pcVar2 = _strdup(param_1);\n  *puVar1 = pcVar2;\n  *(undefined4 *)(puVar1 + 1) = param_2;\n  *(undefined4 *)((long)puVar1 + 0xc) = param_3;\n  return puVar1;\n}\n\n", 
+      "name": "_create_user", 
+      "parameters": []
+    }, 
+    {
+      "comments": [], 
+      "signature": "undefined _free_user()", 
+      "local_variables": [
+        {
+          "storage": "Stack[-0x10]:8", 
+          "datatype": "undefined8", 
+          "name": "local_10"
+        }, 
+        {
+          "storage": "Stack[-0x18]:8", 
+          "datatype": "undefined8", 
+          "name": "local_18"
+        }
+      ], 
+      "global_variables": [], 
+      "entry": "0x1000004e8L", 
+      "strings": [], 
+      "pseudocode": "\nvoid _free_user(undefined8 *param_1)\n\n{\n  if (param_1 != (undefined8 *)0x0) {\n    _free((void *)*param_1);\n    _free(param_1);\n  }\n  return;\n}\n\n", 
+      "name": "_free_user", 
+      "parameters": []
+    }, 
+    {
+      "comments": [], 
+      "signature": "undefined _get_greeting()", 
+      "local_variables": [
+        {
+          "storage": "Stack[-0x8]:8", 
+          "datatype": "undefined8", 
+          "name": "local_8"
+        }, 
+        {
+          "storage": "Stack[-0xc]:4", 
+          "datatype": "undefined4", 
+          "name": "local_c"
+        }, 
+        {
+          "storage": "Stack[-0x10]:4", 
+          "datatype": "undefined4", 
+          "name": "local_10"
+        }
+      ], 
+      "global_variables": [], 
+      "entry": "0x100000528L", 
+      "strings": [], 
+      "pseudocode": "\nchar * _get_greeting(int param_1)\n\n{\n  char *local_8;\n  \n  if (param_1 == 0) {\n    local_8 = \"Hello\";\n  }\n  else if (param_1 == 1) {\n    local_8 = \"Hi\";\n  }\n  else if (param_1 == 2) {\n    local_8 = \"Hey\";\n  }\n  else {\n    local_8 = \"Greetings\";\n  }\n  return local_8;\n}\n\n", 
+      "name": "_get_greeting", 
+      "parameters": []
+    }, 
+    {
+      "comments": [], 
+      "signature": "undefined _greet_user()", 
+      "local_variables": [
+        {
+          "storage": "Stack[-0x10]:8", 
+          "datatype": "undefined8", 
+          "name": "local_10"
+        }, 
+        {
+          "storage": "Stack[-0x18]:8", 
+          "datatype": "undefined8", 
+          "name": "local_18"
+        }, 
+        {
+          "storage": "Stack[-0x20]:8", 
+          "datatype": "undefined8", 
+          "name": "local_20"
+        }, 
+        {
+          "storage": "Stack[-0x28]:8", 
+          "datatype": "undefined8", 
+          "name": "local_28"
+        }, 
+        {
+          "storage": "Stack[-0x30]:8", 
+          "datatype": "undefined8", 
+          "name": "local_30"
+        }
+      ], 
+      "global_variables": [], 
+      "entry": "0x1000005acL", 
+      "strings": [], 
+      "pseudocode": "\nint _greet_user(long param_1)\n\n{\n  int iVar1;\n  \n  _get_greeting(*(undefined4 *)(param_1 + 0xc));\n  iVar1 = _printf(\"%s, %s! Your ID is %d.\\n\");\n  return iVar1;\n}\n\n", 
+      "name": "_greet_user", 
+      "parameters": []
+    }, 
+    {
+      "comments": [], 
+      "signature": "undefined entry()", 
+      "local_variables": [
+        {
+          "storage": "Stack[-0x10]:8", 
+          "datatype": "undefined8", 
+          "name": "local_10"
+        }, 
+        {
+          "storage": "Stack[-0x14]:4", 
+          "datatype": "undefined4", 
+          "name": "local_14"
+        }, 
+        {
+          "storage": "Stack[-0x18]:4", 
+          "datatype": "undefined4", 
+          "name": "local_18"
+        }, 
+        {
+          "storage": "Stack[-0x20]:8", 
+          "datatype": "undefined8", 
+          "name": "local_20"
+        }, 
+        {
+          "storage": "Stack[-0x28]:8", 
+          "datatype": "undefined8", 
+          "name": "local_28"
+        }, 
+        {
+          "storage": "Stack[-0x30]:8", 
+          "datatype": "undefined8", 
+          "name": "local_30"
+        }, 
+        {
+          "storage": "Stack[-0x40]:8", 
+          "datatype": "undefined8", 
+          "name": "local_40"
+        }
+      ], 
+      "global_variables": [
+        {
+          "address": "100004000", 
+          "name": "PTR____stderrp_100004000"
+        }, 
+        {
+          "address": "10000c000", 
+          "name": "___stderrp"
+        }
+      ], 
+      "entry": "0x100000600L", 
+      "strings": [], 
+      "pseudocode": "\nbool entry(int param_1,long param_2)\n\n{\n  undefined8 uVar1;\n  \n  if (1 < param_1) {\n    uVar1 = _create_user(*(undefined8 *)(param_2 + 8),0x3e9,0);\n    _greet_user(uVar1);\n    _free_user(uVar1);\n  }\n  else {\n    _fprintf(*(FILE **)PTR____stderrp_100004000,\"Usage: %s <name>\\n\");\n  }\n  return 1 >= param_1;\n}\n\n", 
+      "name": "entry", 
+      "parameters": []
+    }, 
+    {
+      "comments": [], 
+      "signature": "void _exit(int param_1)", 
+      "local_variables": [], 
+      "global_variables": [
+        {
+          "address": "100004008", 
+          "name": "PTR__exit_100004008"
+        }
+      ], 
+      "entry": "0x1000006acL", 
+      "strings": [], 
+      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nvoid _exit(int param_1)\n\n{\n                    /* WARNING: Could not recover jumptable at 0x0001000006b4. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  (*(code *)PTR__exit_100004008)(param_1);\n  return;\n}\n\n", 
+      "name": "_exit", 
+      "parameters": [
+        {
+          "storage": "w0:4", 
+          "datatype": "int", 
+          "name": "param_1"
+        }
+      ]
+    }, 
+    {
+      "comments": [], 
+      "signature": "int _fprintf(FILE * param_1, char * param_2, ...)", 
+      "local_variables": [], 
+      "global_variables": [
+        {
+          "address": "100004010", 
+          "name": "PTR__fprintf_100004010"
+        }
+      ], 
+      "entry": "0x1000006b8L", 
+      "strings": [], 
+      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nint _fprintf(FILE *param_1,char *param_2,...)\n\n{\n  int iVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x0001000006c0. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  iVar1 = (*(code *)PTR__fprintf_100004010)((int)param_1);\n  return iVar1;\n}\n\n", 
+      "name": "_fprintf", 
+      "parameters": [
+        {
+          "storage": "x0:8", 
+          "datatype": "FILE *", 
+          "name": "param_1"
+        }, 
+        {
+          "storage": "x1:8", 
+          "datatype": "char *", 
+          "name": "param_2"
+        }
+      ]
+    }, 
+    {
+      "comments": [], 
+      "signature": "void _free(void * param_1)", 
+      "local_variables": [], 
+      "global_variables": [
+        {
+          "address": "100004018", 
+          "name": "PTR__free_100004018"
+        }
+      ], 
+      "entry": "0x1000006c4L", 
+      "strings": [], 
+      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nvoid _free(void *param_1)\n\n{\n                    /* WARNING: Could not recover jumptable at 0x0001000006cc. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  (*(code *)PTR__free_100004018)();\n  return;\n}\n\n", 
+      "name": "_free", 
+      "parameters": [
+        {
+          "storage": "x0:8", 
+          "datatype": "void *", 
+          "name": "param_1"
+        }
+      ]
+    }, 
+    {
+      "comments": [], 
+      "signature": "void * _malloc(size_t param_1)", 
+      "local_variables": [], 
+      "global_variables": [
+        {
+          "address": "100004020", 
+          "name": "PTR__malloc_100004020"
+        }
+      ], 
+      "entry": "0x1000006d0L", 
+      "strings": [], 
+      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nvoid * _malloc(size_t param_1)\n\n{\n  void *pvVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x0001000006d8. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  pvVar1 = (void *)(*(code *)PTR__malloc_100004020)();\n  return pvVar1;\n}\n\n", 
+      "name": "_malloc", 
+      "parameters": [
+        {
+          "storage": "x0:8", 
+          "datatype": "typedef size_t __darwin_size_t", 
+          "name": "param_1"
+        }
+      ]
+    }, 
+    {
+      "comments": [], 
+      "signature": "int _printf(char * param_1, ...)", 
+      "local_variables": [], 
+      "global_variables": [
+        {
+          "address": "100004028", 
+          "name": "PTR__printf_100004028"
+        }
+      ], 
+      "entry": "0x1000006dcL", 
+      "strings": [], 
+      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nint _printf(char *param_1,...)\n\n{\n  int iVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x0001000006e4. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  iVar1 = (*(code *)PTR__printf_100004028)((int)param_1);\n  return iVar1;\n}\n\n", 
+      "name": "_printf", 
+      "parameters": [
+        {
+          "storage": "x0:8", 
+          "datatype": "char *", 
+          "name": "param_1"
+        }
+      ]
+    }, 
+    {
+      "comments": [], 
+      "signature": "char * _strdup(char * param_1)", 
+      "local_variables": [], 
+      "global_variables": [
+        {
+          "address": "100004030", 
+          "name": "PTR__strdup_100004030"
+        }
+      ], 
+      "entry": "0x1000006e8L", 
+      "strings": [], 
+      "pseudocode": "\n/* WARNING: Unknown calling convention -- yet parameter storage is locked */\n\nchar * _strdup(char *param_1)\n\n{\n  char *pcVar1;\n  \n                    /* WARNING: Could not recover jumptable at 0x0001000006f0. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n  pcVar1 = (char *)(*(code *)PTR__strdup_100004030)();\n  return pcVar1;\n}\n\n", 
+      "name": "_strdup", 
+      "parameters": [
+        {
+          "storage": "x0:8", 
+          "datatype": "char *", 
+          "name": "param_1"
+        }
+      ]
+    }
+  ], 
+  "program": "crackme", 
+  "data_types": {
+    "structures": [
+      {
+        "length": 16, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "uchar *", 
+            "name": "_base"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "int", 
+            "name": "_size"
+          }
+        ], 
+        "name": "__sbuf"
+      }, 
+      {
+        "length": 152, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "uchar *", 
+            "name": "_p"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "int", 
+            "name": "_r"
+          }, 
+          {
+            "offset": 12, 
+            "datatype": "int", 
+            "name": "_w"
+          }, 
+          {
+            "offset": 16, 
+            "datatype": "short", 
+            "name": "_flags"
+          }, 
+          {
+            "offset": 18, 
+            "datatype": "short", 
+            "name": "_file"
+          }, 
+          {
+            "offset": 24, 
+            "datatype": "/stdio.h/__sbuf\npack()\nStructure __sbuf {\n   0   uchar *   8   _base   \"\"\n   8   int   4   _size   \"\"\n}\nLength: 16 Alignment: 8\n", 
+            "name": "_bf"
+          }, 
+          {
+            "offset": 40, 
+            "datatype": "int", 
+            "name": "_lbfsize"
+          }, 
+          {
+            "offset": 48, 
+            "datatype": "void *", 
+            "name": "_cookie"
+          }, 
+          {
+            "offset": 56, 
+            "datatype": "_func_2 *", 
+            "name": "_close"
+          }, 
+          {
+            "offset": 64, 
+            "datatype": "_func_3 *", 
+            "name": "_read"
+          }, 
+          {
+            "offset": 72, 
+            "datatype": "_func_4 *", 
+            "name": "_seek"
+          }, 
+          {
+            "offset": 80, 
+            "datatype": "_func_5 *", 
+            "name": "_write"
+          }, 
+          {
+            "offset": 88, 
+            "datatype": "/stdio.h/__sbuf\npack()\nStructure __sbuf {\n   0   uchar *   8   _base   \"\"\n   8   int   4   _size   \"\"\n}\nLength: 16 Alignment: 8\n", 
+            "name": "_ub"
+          }, 
+          {
+            "offset": 104, 
+            "datatype": "__sFILEX *", 
+            "name": "_extra"
+          }, 
+          {
+            "offset": 112, 
+            "datatype": "int", 
+            "name": "_ur"
+          }, 
+          {
+            "offset": 116, 
+            "datatype": "uchar[3]", 
+            "name": "_ubuf"
+          }, 
+          {
+            "offset": 119, 
+            "datatype": "uchar[1]", 
+            "name": "_nbuf"
+          }, 
+          {
+            "offset": 120, 
+            "datatype": "/stdio.h/__sbuf\npack()\nStructure __sbuf {\n   0   uchar *   8   _base   \"\"\n   8   int   4   _size   \"\"\n}\nLength: 16 Alignment: 8\n", 
+            "name": "_lb"
+          }, 
+          {
+            "offset": 136, 
+            "datatype": "int", 
+            "name": "_blksize"
+          }, 
+          {
+            "offset": 144, 
+            "datatype": "typedef fpos_t __darwin_off_t", 
+            "name": "_offset"
+          }
+        ], 
+        "name": "__sFILE"
+      }, 
+      {
+        "length": 1, 
+        "members": [], 
+        "name": "__sFILEX"
+      }, 
+      {
+        "length": 8, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "tool"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "version"
+          }
+        ], 
+        "name": "build_tool_version"
+      }, 
+      {
+        "length": 32, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "cmd"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "cmdsize"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "dword", 
+            "name": "platform"
+          }, 
+          {
+            "offset": 12, 
+            "datatype": "dword", 
+            "name": "minos"
+          }, 
+          {
+            "offset": 16, 
+            "datatype": "dword", 
+            "name": "sdk"
+          }, 
+          {
+            "offset": 20, 
+            "datatype": "dword", 
+            "name": "ntools"
+          }, 
+          {
+            "offset": 24, 
+            "datatype": "build_tool_version[1]", 
+            "name": "build_tool_version[]"
+          }
+        ], 
+        "name": "build_version_command"
+      }, 
+      {
+        "length": 8, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "type"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "offset"
+          }
+        ], 
+        "name": "CS_BlobIndex"
+      }, 
+      {
+        "length": 88, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "magic"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "length"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "dword", 
+            "name": "version"
+          }, 
+          {
+            "offset": 12, 
+            "datatype": "dword", 
+            "name": "flags"
+          }, 
+          {
+            "offset": 16, 
+            "datatype": "dword", 
+            "name": "hashOffset"
+          }, 
+          {
+            "offset": 20, 
+            "datatype": "dword", 
+            "name": "identOffset"
+          }, 
+          {
+            "offset": 24, 
+            "datatype": "dword", 
+            "name": "nSpecialSlots"
+          }, 
+          {
+            "offset": 28, 
+            "datatype": "dword", 
+            "name": "nCodeSlots"
+          }, 
+          {
+            "offset": 32, 
+            "datatype": "dword", 
+            "name": "codeLimit"
+          }, 
+          {
+            "offset": 36, 
+            "datatype": "byte", 
+            "name": "hashSize"
+          }, 
+          {
+            "offset": 37, 
+            "datatype": "byte", 
+            "name": "hashType"
+          }, 
+          {
+            "offset": 38, 
+            "datatype": "byte", 
+            "name": "platform"
+          }, 
+          {
+            "offset": 39, 
+            "datatype": "byte", 
+            "name": "pageSize"
+          }, 
+          {
+            "offset": 40, 
+            "datatype": "dword", 
+            "name": "spare2"
+          }, 
+          {
+            "offset": 44, 
+            "datatype": "dword", 
+            "name": "scatterOffset"
+          }, 
+          {
+            "offset": 48, 
+            "datatype": "dword", 
+            "name": "teamOffset"
+          }, 
+          {
+            "offset": 52, 
+            "datatype": "dword", 
+            "name": "spare3"
+          }, 
+          {
+            "offset": 56, 
+            "datatype": "qword", 
+            "name": "codeLimit64"
+          }, 
+          {
+            "offset": 64, 
+            "datatype": "qword", 
+            "name": "execSegBase"
+          }, 
+          {
+            "offset": 72, 
+            "datatype": "qword", 
+            "name": "execSegLimit"
+          }, 
+          {
+            "offset": 80, 
+            "datatype": "qword", 
+            "name": "execSegFlags"
+          }
+        ], 
+        "name": "CS_CodeDirectory"
+      }, 
+      {
+        "length": 20, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "magic"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "length"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "dword", 
+            "name": "count"
+          }, 
+          {
+            "offset": 12, 
+            "datatype": "CS_BlobIndex[1]", 
+            "name": "index"
+          }
+        ], 
+        "name": "CS_SuperBlob"
+      }, 
+      {
+        "length": 16, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "cmd"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "cmdsize"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "dword", 
+            "name": "dataoff"
+          }, 
+          {
+            "offset": 12, 
+            "datatype": "dword", 
+            "name": "datasize"
+          }
+        ], 
+        "name": "dyld_chained_fixups_command"
+      }, 
+      {
+        "length": 28, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "fixups_version"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "starts_offset"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "dword", 
+            "name": "imports_offset"
+          }, 
+          {
+            "offset": 12, 
+            "datatype": "dword", 
+            "name": "symbols_offset"
+          }, 
+          {
+            "offset": 16, 
+            "datatype": "dword", 
+            "name": "imports_count"
+          }, 
+          {
+            "offset": 20, 
+            "datatype": "dword", 
+            "name": "imports_format"
+          }, 
+          {
+            "offset": 24, 
+            "datatype": "dword", 
+            "name": "symbols_format"
+          }
+        ], 
+        "name": "dyld_chained_fixups_header"
+      }, 
+      {
+        "length": 4, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword:8(storage:1,bitOffset:0)", 
+            "name": "lib_ordinal"
+          }, 
+          {
+            "offset": 1, 
+            "datatype": "dword:1(storage:1,bitOffset:0)", 
+            "name": "weak_import"
+          }, 
+          {
+            "offset": 1, 
+            "datatype": "dword:23(storage:3,bitOffset:1)", 
+            "name": "name_offset"
+          }
+        ], 
+        "name": "dyld_chained_import"
+      }, 
+      {
+        "length": 20, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "seg_count"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword[4]", 
+            "name": "seg_info_offset"
+          }
+        ], 
+        "name": "dyld_chained_starts_in_image"
+      }, 
+      {
+        "length": 24, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "size"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "word", 
+            "name": "page_size"
+          }, 
+          {
+            "offset": 6, 
+            "datatype": "word", 
+            "name": "pointer_format"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "IBO64DataType: typedef ImageBaseOffset64 pointer64", 
+            "name": "segment_offset"
+          }, 
+          {
+            "offset": 16, 
+            "datatype": "dword", 
+            "name": "max_valid_pointer"
+          }, 
+          {
+            "offset": 20, 
+            "datatype": "word", 
+            "name": "page_count"
+          }, 
+          {
+            "offset": 22, 
+            "datatype": "word[1]", 
+            "name": "page_starts"
+          }
+        ], 
+        "name": "dyld_chained_starts_in_segment"
+      }, 
+      {
+        "length": 16, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "/MachO/lc_str\npack(disabled)\nStructure lc_str {\n   0   dword   4   offset   \"\"\n}\nLength: 4 Alignment: 1\n", 
+            "name": "name"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "timestamp"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "dword", 
+            "name": "current_version"
+          }, 
+          {
+            "offset": 12, 
+            "datatype": "dword", 
+            "name": "compatibility_version"
+          }
+        ], 
+        "name": "dylib"
+      }, 
+      {
+        "length": 24, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "cmd"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "cmdsize"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "/MachO/dylib\npack(disabled)\nStructure dylib {\n   0   lc_str   4   name   \"\"\n   4   dword   4   timestamp   \"\"\n   8   dword   4   current_version   \"\"\n   12   dword   4   compatibility_version   \"\"\n}\nLength: 16 Alignment: 1\n", 
+            "name": "dylib"
+          }
+        ], 
+        "name": "dylib_command"
+      }, 
+      {
+        "length": 12, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "cmd"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "cmdsize"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "/MachO/lc_str\npack(disabled)\nStructure lc_str {\n   0   dword   4   offset   \"\"\n}\nLength: 4 Alignment: 1\n", 
+            "name": "name"
+          }
+        ], 
+        "name": "dylinker_command"
+      }, 
+      {
+        "length": 80, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "cmd"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "cmdsize"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "dword", 
+            "name": "ilocalsym"
+          }, 
+          {
+            "offset": 12, 
+            "datatype": "dword", 
+            "name": "nlocalsym"
+          }, 
+          {
+            "offset": 16, 
+            "datatype": "dword", 
+            "name": "iextdefsym"
+          }, 
+          {
+            "offset": 20, 
+            "datatype": "dword", 
+            "name": "nextdefsym"
+          }, 
+          {
+            "offset": 24, 
+            "datatype": "dword", 
+            "name": "iundefsym"
+          }, 
+          {
+            "offset": 28, 
+            "datatype": "dword", 
+            "name": "nundefsym"
+          }, 
+          {
+            "offset": 32, 
+            "datatype": "dword", 
+            "name": "tocoff"
+          }, 
+          {
+            "offset": 36, 
+            "datatype": "dword", 
+            "name": "ntoc"
+          }, 
+          {
+            "offset": 40, 
+            "datatype": "dword", 
+            "name": "modtaboff"
+          }, 
+          {
+            "offset": 44, 
+            "datatype": "dword", 
+            "name": "nmodtab"
+          }, 
+          {
+            "offset": 48, 
+            "datatype": "dword", 
+            "name": "extrefsymoff"
+          }, 
+          {
+            "offset": 52, 
+            "datatype": "dword", 
+            "name": "nextrefsyms"
+          }, 
+          {
+            "offset": 56, 
+            "datatype": "dword", 
+            "name": "indirectsymoff"
+          }, 
+          {
+            "offset": 60, 
+            "datatype": "dword", 
+            "name": "nindirectsyms"
+          }, 
+          {
+            "offset": 64, 
+            "datatype": "dword", 
+            "name": "extreloff"
+          }, 
+          {
+            "offset": 68, 
+            "datatype": "dword", 
+            "name": "nextrel"
+          }, 
+          {
+            "offset": 72, 
+            "datatype": "dword", 
+            "name": "locreloff"
+          }, 
+          {
+            "offset": 76, 
+            "datatype": "dword", 
+            "name": "nlocrel"
+          }
+        ], 
+        "name": "dysymtab_command"
+      }, 
+      {
+        "length": 24, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "cmd"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "cmdsize"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "qword", 
+            "name": "entryoff"
+          }, 
+          {
+            "offset": 16, 
+            "datatype": "qword", 
+            "name": "stacksize"
+          }
+        ], 
+        "name": "entry_point_command"
+      }, 
+      {
+        "length": 4, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "offset"
+          }
+        ], 
+        "name": "lc_str"
+      }, 
+      {
+        "length": 16, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "cmd"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "cmdsize"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "dword", 
+            "name": "dataoff"
+          }, 
+          {
+            "offset": 12, 
+            "datatype": "dword", 
+            "name": "datasize"
+          }
+        ], 
+        "name": "linkedit_data_command"
+      }, 
+      {
+        "length": 32, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "magic"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "cputype"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "dword", 
+            "name": "cpusubtype"
+          }, 
+          {
+            "offset": 12, 
+            "datatype": "dword", 
+            "name": "filetype"
+          }, 
+          {
+            "offset": 16, 
+            "datatype": "dword", 
+            "name": "ncmds"
+          }, 
+          {
+            "offset": 20, 
+            "datatype": "dword", 
+            "name": "sizeofcmds"
+          }, 
+          {
+            "offset": 24, 
+            "datatype": "dword", 
+            "name": "flags"
+          }, 
+          {
+            "offset": 28, 
+            "datatype": "dword", 
+            "name": "reserved"
+          }
+        ], 
+        "name": "mach_header"
+      }, 
+      {
+        "length": 16, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "n_strx"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "byte", 
+            "name": "n_type"
+          }, 
+          {
+            "offset": 5, 
+            "datatype": "byte", 
+            "name": "n_sect"
+          }, 
+          {
+            "offset": 6, 
+            "datatype": "word", 
+            "name": "n_desc"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "qword", 
+            "name": "n_value"
+          }
+        ], 
+        "name": "nlist"
+      }, 
+      {
+        "length": 80, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "string", 
+            "name": "sectname"
+          }, 
+          {
+            "offset": 16, 
+            "datatype": "string", 
+            "name": "segname"
+          }, 
+          {
+            "offset": 32, 
+            "datatype": "qword", 
+            "name": "addr"
+          }, 
+          {
+            "offset": 40, 
+            "datatype": "qword", 
+            "name": "size"
+          }, 
+          {
+            "offset": 48, 
+            "datatype": "dword", 
+            "name": "offset"
+          }, 
+          {
+            "offset": 52, 
+            "datatype": "dword", 
+            "name": "align"
+          }, 
+          {
+            "offset": 56, 
+            "datatype": "dword", 
+            "name": "reloff"
+          }, 
+          {
+            "offset": 60, 
+            "datatype": "dword", 
+            "name": "nrelocs"
+          }, 
+          {
+            "offset": 64, 
+            "datatype": "dword", 
+            "name": "flags"
+          }, 
+          {
+            "offset": 68, 
+            "datatype": "dword", 
+            "name": "reserved1"
+          }, 
+          {
+            "offset": 72, 
+            "datatype": "dword", 
+            "name": "reserved2"
+          }, 
+          {
+            "offset": 76, 
+            "datatype": "dword", 
+            "name": "reserved3"
+          }
+        ], 
+        "name": "section"
+      }, 
+      {
+        "length": 72, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "cmd"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "cmdsize"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "string", 
+            "name": "segname"
+          }, 
+          {
+            "offset": 24, 
+            "datatype": "qword", 
+            "name": "vmaddr"
+          }, 
+          {
+            "offset": 32, 
+            "datatype": "qword", 
+            "name": "vmsize"
+          }, 
+          {
+            "offset": 40, 
+            "datatype": "qword", 
+            "name": "fileoff"
+          }, 
+          {
+            "offset": 48, 
+            "datatype": "qword", 
+            "name": "filesize"
+          }, 
+          {
+            "offset": 56, 
+            "datatype": "dword", 
+            "name": "maxprot"
+          }, 
+          {
+            "offset": 60, 
+            "datatype": "dword", 
+            "name": "initprot"
+          }, 
+          {
+            "offset": 64, 
+            "datatype": "dword", 
+            "name": "nsects"
+          }, 
+          {
+            "offset": 68, 
+            "datatype": "dword", 
+            "name": "flags"
+          }
+        ], 
+        "name": "segment_command"
+      }, 
+      {
+        "length": 16, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "cmd"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "cmdsize"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "qword", 
+            "name": "version"
+          }
+        ], 
+        "name": "source_version_command"
+      }, 
+      {
+        "length": 24, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "cmd"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "cmdsize"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "dword", 
+            "name": "symoff"
+          }, 
+          {
+            "offset": 12, 
+            "datatype": "dword", 
+            "name": "nsyms"
+          }, 
+          {
+            "offset": 16, 
+            "datatype": "dword", 
+            "name": "stroff"
+          }, 
+          {
+            "offset": 20, 
+            "datatype": "dword", 
+            "name": "strsize"
+          }
+        ], 
+        "name": "symtab_command"
+      }, 
+      {
+        "length": 24, 
+        "members": [
+          {
+            "offset": 0, 
+            "datatype": "dword", 
+            "name": "cmd"
+          }, 
+          {
+            "offset": 4, 
+            "datatype": "dword", 
+            "name": "cmdsize"
+          }, 
+          {
+            "offset": 8, 
+            "datatype": "byte[16]", 
+            "name": "uuid"
+          }
+        ], 
+        "name": "uuid_command"
+      }
+    ], 
+    "function_definitions": [
+      {
+        "return_type": "int", 
+        "name": "_func_2", 
+        "parameters": [
+          {
+            "datatype": "void *", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "return_type": "int", 
+        "name": "_func_3", 
+        "parameters": [
+          {
+            "datatype": "void *", 
+            "name": ""
+          }, 
+          {
+            "datatype": "char *", 
+            "name": ""
+          }, 
+          {
+            "datatype": "int", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "return_type": "typedef fpos_t __darwin_off_t", 
+        "name": "_func_4", 
+        "parameters": [
+          {
+            "datatype": "void *", 
+            "name": ""
+          }, 
+          {
+            "datatype": "typedef fpos_t __darwin_off_t", 
+            "name": ""
+          }, 
+          {
+            "datatype": "int", 
+            "name": ""
+          }
+        ]
+      }, 
+      {
+        "return_type": "int", 
+        "name": "_func_5", 
+        "parameters": [
+          {
+            "datatype": "void *", 
+            "name": ""
+          }, 
+          {
+            "datatype": "char *", 
+            "name": ""
+          }, 
+          {
+            "datatype": "int", 
+            "name": ""
+          }
+        ]
+      }
+    ], 
+    "enums": []
+  }
+}
