@@ -66,3 +66,5 @@ __pypackages__/
 # Environment variable files
 .env
 .env.*
+
+crackme
