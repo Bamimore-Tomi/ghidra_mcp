@@ -6,10 +6,8 @@ from ghidra.program.model.symbol import RefType
 from ghidra.program.model.listing import CodeUnit
 from ghidra.program.model.data import Structure, Enum, FunctionDefinition
 
-# Determine the output path for the context JSON
 GHIDRA_CONTEXT_JSON = os.environ.get("GHIDRA_CONTEXT_JSON", "ghidra_context.json")
 
-# Initialize the decompiler interface
 decompiler = DecompInterface()
 decompiler.openProgram(currentProgram)
 
@@ -133,7 +131,6 @@ for dt in dtm.getAllDataTypes():
             })
         data_types["function_definitions"].append(func_def)
 
-# Write the collected information to the specified JSON file
 with open(GHIDRA_CONTEXT_JSON, "w") as f:
     json.dump({
         "program": currentProgram.getName(),

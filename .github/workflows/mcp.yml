@@ -1,0 +1,34 @@
+name: MCP Tests
+
+on:
+  push:
+    paths:
+      - '**.py'
+      - '.github/workflows/**'
+      - 'pyproject.toml'
+  pull_request:
+    paths:
+      - '**.py'
+      - '.github/workflows/**'
+      - 'pyproject.toml'
+
+jobs:
+  test:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install uv and dependencies
+        run: |
+          pip install uv
+          uv pip install
+
+      - name: Run tests
+        run: uv pip run pytest
