@@ -16,4 +16,4 @@ testpaths = ["."]
 asyncio_mode = "auto"
 
 [tool.setuptools]
-py-modules = ["main", "export_context]
+py-modules = ["main", "export_context"]
