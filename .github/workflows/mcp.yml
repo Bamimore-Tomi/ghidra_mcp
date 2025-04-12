@@ -28,7 +28,7 @@ jobs:
       - name: Install uv and dependencies
         run: |
           pip install uv
-          uv pip install
+          uv pip install .
 
       - name: Run tests
-        run: uv pip run pytest
+        run: uv run pytest
