@@ -4,6 +4,10 @@ This project lets you use [Ghidra](https://ghidra-sre.org/) in headless mode to 
 
 It turns Ghidra into an interactive reverse-engineering backend.
 
+<a href="https://glama.ai/mcp/servers/@Bamimore-Tomi/ghidra_mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@Bamimore-Tomi/ghidra_mcp/badge" alt="Ghidra Server MCP server" />
+</a>
+
 ---
 
 ## 🚀 Features
